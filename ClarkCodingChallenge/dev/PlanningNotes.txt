@@ -1,0 +1,45 @@
+﻿Required Components:
+	- Some sort of data store for contact information.
+		- Keep a dictionary in a class in the back end?
+	- Webpage w/ form fields + validation
+		- Validation should be independently confirmed on the back end
+	- REST API endpoint
+		- Simple GET request with URL Params
+
+DataContainer
+	- Simple class containing a dictionary to store data
+	- Generic key-based access
+	- Should't need to know anything about the data it stores
+
+Contact
+	- Struct that contains the email, first name, and last name
+
+DataAccess
+	- Make an interface that allows for simple CRUD operations?
+	- Interfaces with the DataContainer, could be swapable with a db
+	- Methods:
+		- AddContact(email, firstName, lastName)
+		- GetContacts()
+
+Business Logic
+	- Should use DI to generically access information
+	- Methods:
+		- AddContact(email, firstName, lastName)
+		- GetContact(email)
+		- GetContacts(asc)
+		- GetContacts(asc, lname)
+
+Controller
+	- Has instance of the BusinessLogic
+		
+Tests:
+	- Provide a set of sample data that is loaded directly into the controller
+	- Need to test the following operations
+		- Blank fname, lname, and/or email - error
+		- bad format email - error
+		- duplicate entry - error
+		- fetching data w/ params
+			- no last name, no asc
+			- last name, no asc
+			- no last name, asc
+			- last name, asc
