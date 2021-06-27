@@ -1,0 +1,36 @@
+﻿
+@model ClarkCodingChallenge.Models.ContactModel
+@{
+    ViewData["Title"] = "Contacts Page";
+}
+
+<!-- Reference: https://www.codeproject.com/Articles/1078491/Creating-Forms-in-ASP-NET-MVC -->
+@* Reference for Html extensions: https://docs.microsoft.com/en-us/dotnet/api/system.web.mvc.html.labelextensions.labelfor?view=aspnet-mvc-5.2 *@
+@using (Html.BeginForm("Create", "Contacts", FormMethod.Post))
+{
+    @Html.LabelFor(model => model.Email)
+    @Html.TextBoxFor(model => model.Email)
+<br />
+    @Html.ValidationMessageFor(model => model.Email)
+<br />
+<br />
+
+    @Html.LabelFor(model => model.LastName)
+    @Html.TextBoxFor(model => model.LastName)
+<br />
+    @Html.ValidationMessageFor(model => model.LastName)
+<br />
+<br />
+
+    @Html.LabelFor(model => model.FirstName)
+    @Html.TextBoxFor(model => model.FirstName)
+<br />
+    @Html.ValidationMessageFor(model => model.FirstName)
+<br />
+<br />
+
+<input type="submit" value="Create" />
+
+<h3>@ViewBag.ResultMessage</h3>
+
+}

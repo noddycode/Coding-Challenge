@@ -1,4 +1,7 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using ClarkCodingChallenge.BusinessLogic;
+using ClarkCodingChallenge.DataAccess;
+using ClarkCodingChallenge.DataStorage;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -28,6 +31,10 @@ namespace ClarkCodingChallenge
 
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+
+            services.AddScoped<IContactsService, ContactsService>();
+            services.AddScoped<IContactsDataAccess, ContactsDataAccess>();
+            services.AddScoped<IDataStorage, SimpleDataStorage>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

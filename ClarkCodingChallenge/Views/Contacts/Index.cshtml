@@ -1,7 +1,12 @@
-﻿@{
+﻿
+@{
     ViewData["Title"] = "Contacts Page";
 }
 
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
 </div>
+
+@*Reference: https://docs.microsoft.com/en-us/dotnet/api/system.web.mvc.html.linkextensions.actionlink?view=aspnet-mvc-5.2*@
+@Html.ActionLink("Create Contact", "Create")
+@Html.ActionLink("View Contacts", "GetAll")

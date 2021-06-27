@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace ClarkCodingChallenge.DataStorage
 {
-    interface IDataStorage
+    public interface IDataStorage
     {
         void AddEntry(string key, string[] values);
         string[] GetEntry(string key);

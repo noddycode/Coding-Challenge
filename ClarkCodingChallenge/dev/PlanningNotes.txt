@@ -11,7 +11,7 @@ DataContainer
 	- Generic key-based access
 	- Should't need to know anything about the data it stores
 
-Contact
+ContactModel
 	- Struct that contains the email, first name, and last name
 
 DataAccess
