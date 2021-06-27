@@ -49,6 +49,7 @@ namespace ClarkCodingChallenge.Controllers
             return View();
         }
 
+        // TODO: Add GetAll controller GET method
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {

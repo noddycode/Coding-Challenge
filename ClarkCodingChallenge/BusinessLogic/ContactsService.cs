@@ -21,6 +21,7 @@ namespace ClarkCodingChallenge.BusinessLogic
         }
         public void AddContact(string email, string lastName, string firstName)
         {
+            // TODO: Figure out how to return contact objects
             // Do we need validation here, or do we trust the model to do all of it?
             // Does that depend on what we expect to be able to access this method?
             foreach (string field in new string[] { email, lastName, firstName })
@@ -34,6 +35,7 @@ namespace ClarkCodingChallenge.BusinessLogic
         {
             List<ContactModel> contacts = dataAccess.GetContacts();
 
+            // TODO: Add logic for ascending and descending order
             if (order == 1);
             else if(order == -1);
             

@@ -9,6 +9,8 @@ namespace ClarkCodingChallenge.Models
     public class ContactModel
     {
         [Required(ErrorMessage = "Please enter an email")]
+
+        // TODO: Add email formatting validation
         public string Email { get; set; }
         [Required(ErrorMessage = "Please enter last name")]
         public string LastName { get; set; }
